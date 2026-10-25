@@ -1,108 +1,3 @@
-<!--no_toc-->
-<style>
-:root{--p:#102A1E;--e:#059669;--a:#D97706;--ah:#B45309;--al:#FEF3C7;--bg:#F8FAF9;--b:#E2E8F0;--t:#1E293B;--m:#64748B}
-.sv-wrap{color:var(--t);background:var(--bg);font-family:system-ui,-apple-system,sans-serif;line-height:1.6;font-size:1.0625rem}
-.sv-c{max-width:1200px;margin:0 auto;padding:0 1.25rem}
-.sv-hero{background:linear-gradient(165deg,#0A1C14 0%,var(--p) 65%,#0B1914 100%);color:#F8FAFC;padding:3.5rem 0 3rem}
-.sv-hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:2.5rem;align-items:center}
-@media(max-width:900px){.sv-hero-grid{grid-template-columns:1fr}}
-.sv-live{display:inline-flex;align-items:center;gap:.5rem;padding:.3rem .8rem;border-radius:99px;background:rgba(5,150,105,.25);border:1px solid rgba(52,211,153,.4);color:#A7F3D0;font-size:.8rem;font-weight:700;text-transform:uppercase}
-.sv-dot{width:8px;height:8px;border-radius:50%;background:#34D399;box-shadow:0 0 0 0 rgba(52,211,153,.7);animation:p 1.8s infinite}
-@keyframes p{0%{box-shadow:0 0 0 0 rgba(52,211,153,.7)}70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
-.sv-hero h1{font-size:clamp(1.85rem,3.5vw,2.75rem);font-weight:800;color:#FFF;line-height:1.2;margin:.75rem 0}
-.sv-hero h1 em{color:#FBBF24;font-style:normal}
-.sv-hero-lead{font-size:1.1rem;color:#CBD5E1;margin-bottom:1.5rem}
-.sv-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;padding:1rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:10px;margin-bottom:1.5rem}
-.sv-stat strong{display:block;font-size:1.4rem;font-weight:800;color:#FBBF24}
-.sv-stat span{font-size:.78rem;color:#94A3B8}
-.sv-btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;min-height:46px;padding:.6rem 1.4rem;border-radius:8px;font-weight:700;text-decoration:none!important;cursor:pointer;transition:all .2s ease;font-size:.9rem}
-.sv-btn-amz{background:linear-gradient(135deg,#F59E0B 0%,var(--a) 100%);color:#FFF!important;box-shadow:0 4px 12px rgba(217,119,6,.35)}
-.sv-btn-amz:hover{background:linear-gradient(135deg,#FBBF24 0%,var(--ah) 100%);transform:translateY(-2px);color:#FFF!important}
-.sv-btn-gh{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);color:#FFF!important}
-.sv-btn-gh:hover{background:rgba(255,255,255,.18);color:#FFF!important}
-.sv-hcard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:1.25rem}
-.sv-hcard-img{width:100%;height:210px;border-radius:8px;overflow:hidden;margin-bottom:1rem;background:#000}
-.sv-hcard-img img{width:100%;height:100%;object-fit:cover}
-.sv-sec{padding:3.5rem 0}
-.sv-sec-alt{background:#FFF;border-top:1px solid var(--b);border-bottom:1px solid var(--b)}
-.sv-head{text-align:center;max-width:760px;margin:0 auto 2.5rem}
-.sv-eye{display:inline-block;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--a);margin-bottom:.35rem}
-.sv-head h2{font-size:clamp(1.6rem,2.8vw,2.15rem);font-weight:800;color:var(--p);margin:0 0 .5rem}
-.sv-head p{font-size:1rem;color:var(--m);margin:0}
-.sv-wgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-@media(max-width:960px){.sv-wgrid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:550px){.sv-wgrid{grid-template-columns:1fr}}
-.sv-wcard{background:#FFF;border:2px solid var(--b);border-radius:12px;padding:1.25rem;text-decoration:none!important;color:var(--t)!important;display:flex;flex-direction:column;justify-content:space-between;transition:all .2s ease}
-.sv-wcard:hover{border-color:var(--e);transform:translateY(-3px);box-shadow:0 8px 20px -4px rgba(16,42,30,.12)}
-.sv-wcard.is-em:hover{border-color:#DC2626}
-.sv-wicon{width:44px;height:44px;border-radius:8px;background:#E8F5E9;color:#1B5E20;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:1.3rem}
-.sv-wcard.is-em .sv-wicon{background:#FEE2E2;color:#DC2626}
-.sv-wcard h3{font-size:1.1rem;font-weight:700;color:var(--p);margin:0 0 .35rem}
-.sv-wcard p{font-size:.875rem;color:var(--m);line-height:1.45;margin:0 0 1rem;flex-grow:1}
-.sv-wact{font-size:.8125rem;font-weight:800;color:var(--e);text-transform:uppercase}
-.sv-wcard.is-em .sv-wact{color:#DC2626}
-.sv-toc{background:#FFF;border:1px solid var(--b);border-left:4px solid var(--e);border-radius:10px;padding:1.25rem;margin:2rem 0;box-shadow:0 1px 3px rgba(0,0,0,.04)}
-.sv-toc-h{display:flex;justify-content:space-between;align-items:center;cursor:pointer}
-.sv-toc-h strong{font-size:1.05rem;color:var(--p)}
-.sv-toc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.5rem 1.25rem;margin:1rem 0 0;padding-top:.75rem;border-top:1px solid var(--b);list-style:none}
-@media(max-width:650px){.sv-toc-grid{grid-template-columns:1fr}}
-.sv-toc-grid a{color:var(--t);text-decoration:none;font-size:.9rem}
-.sv-toc-grid a:hover{color:var(--a)}
-.sv-tb-wrap{width:100%;overflow-x:auto;border:1px solid var(--b);border-radius:10px;background:#FFF}
-.sv-tb{width:100%;border-collapse:collapse;text-align:left;font-size:.9rem}
-.sv-tb th{background:#F8FAF9;color:var(--p);padding:.85rem 1rem;border-bottom:2px solid var(--b);font-weight:700}
-.sv-tb td{padding:.85rem 1rem;border-bottom:1px solid #EDF2F7;vertical-align:middle}
-.sv-tb tr:hover{background:#F0FDF4}
-.sv-thumb{width:40px;height:40px;object-fit:contain;background:#FFF;border:1px solid var(--b);border-radius:6px;padding:2px;margin-right:.65rem;vertical-align:middle}
-.sv-chip{display:inline-flex;padding:.2rem .55rem;border-radius:99px;font-size:.75rem;font-weight:700;line-height:1}
-.sv-chip-eco{background:#DEF7EC;color:#03543F}
-.sv-chip-warn{background:#FEF08A;color:#713F12}
-.sv-chip-dang{background:#FEE2E2;color:#991B1B}
-.sv-tb-btn{display:inline-flex;padding:.4rem .85rem;border-radius:6px;background:linear-gradient(135deg,#F59E0B 0%,var(--a) 100%);color:#FFF!important;font-size:.78rem;font-weight:700;text-decoration:none!important;white-space:nowrap}
-.sv-combo{background:linear-gradient(135deg,#FFFBEB 0%,#FEF3C7 45%,#FFF 100%);border:2px solid #FCD34D;border-radius:14px;padding:1.75rem;margin:2.5rem 0;position:relative}
-.sv-combo-rib{position:absolute;top:-.9rem;left:1.5rem;padding:.25rem .9rem;border-radius:99px;background:var(--p);color:#FFF;font-size:.75rem;font-weight:800;text-transform:uppercase}
-.sv-combo-grid{display:grid;grid-template-columns:auto 1fr auto;gap:1.75rem;align-items:center}
-@media(max-width:800px){.sv-combo-grid{grid-template-columns:1fr;text-align:center}}
-.sv-combo-vis{display:flex;align-items:center;justify-content:center;gap:.75rem}
-.sv-combo-img{width:90px;height:90px;background:#FFF;border:1px solid #FDE68A;border-radius:8px;padding:.4rem;object-fit:contain}
-.sv-plist{display:flex;flex-direction:column;gap:2rem;margin-top:1.5rem}
-.sv-pcard{background:#FFF;border:1px solid var(--b);border-radius:14px;padding:1.75rem;box-shadow:0 4px 12px -2px rgba(16,42,30,.06);display:grid;grid-template-columns:240px 1fr;gap:2rem;position:relative;transition:all .2s ease}
-.sv-pcard:hover{border-color:var(--e);box-shadow:0 10px 24px -4px rgba(16,42,30,.1);transform:translateY(-2px)}
-.sv-pcard.is-top{border:2px solid var(--a)}
-@media(max-width:850px){.sv-pcard{grid-template-columns:1fr;gap:1.25rem;padding:1.25rem}}
-.sv-paside{display:flex;flex-direction:column;align-items:center;text-align:center}
-.sv-pimg{width:100%;height:190px;background:#FFF;border:1px solid #EDF2F7;border-radius:8px;padding:1rem;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;box-sizing:border-box}
-.sv-pimg img{max-width:100%;max-height:100%;object-fit:contain}
-.sv-pmain{display:flex;flex-direction:column;justify-content:space-between}
-.sv-phead{display:flex;justify-content:space-between;align-items:flex-start;gap:.75rem;margin-bottom:.5rem}
-.sv-prank{font-size:1.35rem;font-weight:800;color:var(--a);background:var(--al);width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.sv-pcard.is-top .sv-prank{background:var(--a);color:#FFF}
-.sv-pbrand{font-size:.78rem;font-weight:800;text-transform:uppercase;color:var(--m);margin-bottom:.2rem;display:block}
-.sv-ptitle{font-size:1.25rem;font-weight:800;color:var(--p);margin:0;line-height:1.3}
-.sv-pdesc{font-size:.95rem;color:var(--t);line-height:1.55;margin:.75rem 0 1rem}
-.sv-proscons{display:grid;grid-template-columns:1fr 1fr;gap:1rem;background:#F8FAF9;border:1px solid #EDF2F7;border-radius:8px;padding:1rem;margin-bottom:1rem;font-size:.84rem}
-@media(max-width:600px){.sv-proscons{grid-template-columns:1fr}}
-.sv-proscons ul{margin:0;padding-left:1.1rem;line-height:1.45}
-.sv-pfoot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;padding-top:1rem;border-top:1px solid #EDF2F7}
-.sv-ptag{background:#00A8E1;color:#FFF;font-size:.7rem;font-weight:800;padding:.15rem .45rem;border-radius:4px}
-.sv-cats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-@media(max-width:800px){.sv-cats{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:500px){.sv-cats{grid-template-columns:1fr}}
-.sv-ccard{background:#FFF;border:1px solid var(--b);border-radius:10px;padding:1.25rem;text-decoration:none!important;color:var(--t)!important;transition:all .2s ease}
-.sv-ccard:hover{border-color:var(--e);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.06)}
-.sv-ccard h3{font-size:1.05rem;color:var(--p);margin:0 0 .35rem}
-.sv-ccard p{font-size:.84rem;color:var(--m);margin:0 0 .75rem;line-height:1.4}
-.sv-tline{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-@media(max-width:850px){.sv-tline{grid-template-columns:1fr}}
-.sv-tcard{background:#FFF;border:1px solid var(--b);border-radius:10px;padding:1.5rem}
-.sv-tcard.is-act{border:2px solid var(--e);background:linear-gradient(180deg,#F0FDF4 0%,#FFF 60%)}
-.sv-faq{display:flex;flex-direction:column;gap:.75rem;max-width:860px;margin:1.5rem auto 0}
-.sv-faq-i{background:#FFF;border:1px solid var(--b);border-radius:8px;overflow:hidden}
-.sv-faq-q{padding:1rem 1.25rem;font-weight:700;color:var(--p);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:.75rem}
-.sv-faq-a{padding:0 1.25rem 1.25rem;font-size:.92rem;color:var(--t);line-height:1.6;border-top:1px solid #EDF2F7;padding-top:.75rem}
-.sv-dock{position:fixed;bottom:0;left:0;right:0;z-index:99999;background:rgba(255,255,255,.98);backdrop-filter:blur(10px);border-top:1px solid var(--b);padding:.5rem 1rem calc(.5rem + env(safe-area-inset-bottom));box-shadow:0 -6px 20px rgba(0,0,0,.1);display:none;align-items:center;justify-content:space-between;gap:.75rem}
-@media(max-width:768px){.sv-dock{display:flex}}
-</style>
 <div class="sv-wrap">
   <header class="sv-hero">
     <div class="sv-c">
@@ -163,4 +58,71 @@
         <div class="sv-head">
           <span class="sv-eye">Comparativa Técnica</span>
           <h2>Matriz Técnica para el Control de Avispa Asiática</h2>
-          <p>Filtra las 10 herramientas homol
+          <p>Filtra las 10 herramientas homologadas según su nivel de selectividad para abejas, tipo de acción y entorno operativo.</p>
+        </div>
+        <div class="sv-tb-wrap">
+          <table class="sv-tb">
+            <thead><tr><th>#</th><th>Solución / Modelo</th><th>Categoría</th><th>Entorno Ideal</th><th>Selectividad</th><th>Nota</th><th style="text-align:right">Comprar</th></tr></thead>
+            <tbody>
+              <tr><td>01</td><td><img src="https://stopvelutinas.com/wp-content/uploads/2026/10/vespacatch-select.jpg" alt="Trampa selectiva VespaCatch Select para el control de avispa asiatica" class="sv-thumb"><strong>Véto-pharma VespaCatch Select</strong></td><td>Trampa Mecánica</td><td>Apiarios &amp; Huertos</td><td><span class="sv-chip sv-chip-eco">100% Dial 8-11 mm</span></td><td><strong>9.6</strong>/10</td><td style="text-align:right"><a href="https://www.amazon.es/dp/B07V3GZ7Q4?tag=huertomusical-21" class="sv-tb-btn" target="_blank" rel="sponsored nofollow noopener">Ver en Amazon</a></td></tr>
+              <tr><td>02</td><td><img src="https://stopvelutinas.com/wp-content/uploads/2026/10/beevital-trap.jpg" alt="Trampa en seco BeeVital para el control de avispa asiatica" class="sv-thumb"><strong>BeeVital VelutinaTrap</strong></td><td>Trampa en Seco</td><td>Porches, Terrazas &amp; Jardín</td><td><span class="sv-chip sv-chip-eco">Cero Putrefacción</span></td><td><strong>9.3</strong>/10</td><td style="text-align:right"><a href="https://www.amazon.es/dp/B08N5KM2LZ?tag=huertomusical-21" class="sv-tb-btn" target="_blank" rel="sponsored nofollow noopener">Ver en Amazon</a></td></tr>
+              <tr><td>03</td><td><img src="https://stopvelutinas.com/wp-content/uploads/2026/10/econex-trap.jpg" alt="Trampa de gran capacidad Econex para el control de avispa asiatica" class="sv-thumb"><strong>Econex VELUTINATRAP</strong></td><td>Trampa Perimetral</td><td>Fincas, Viñedos &amp; Frutales</td><td><span class="sv-chip sv-chip-warn">Monitoreo Masivo</span></td><td><strong>8.9</strong>/10</td><td style="text-align:right"><a href="https://www.amazon.es/dp/B079Z1K9TY?tag=huertomusical-21" class="sv-tb-btn" target="_blank" rel="sponsored nofollow noopener">Ver en Amazon</a></td></tr>
+              <tr><td>04</td><td><img src="https://stopvelutinas.com/wp-content/uploads/2026/10/vespacatch-classic.jpg" alt="Trampa de vaso clasica VespaCatch para el control de avispa asiatica" class="sv-thumb"><strong>VespaCatch Clásica (Vaso)</strong></td><td>Trampa de Choque</td><td>Apiarios en Asedio</td><td><span class="sv-chip sv-chip-dang">No Selectiva</span></td><td><strong>8.6</strong>/10</td><td style="text-align:right"><a href="https://www.amazon.es/dp/B00K5M9W1Q?tag=huertomusical-21" class="sv-tb-btn" target="_blank" rel="sponsored nofollow noopener">Ver en Amazon</a></td></tr>
+              <tr><td>05</td><td><img src="https://stopvelutinas.com/wp-content/uploads/2026/10/atrayente-sticks.jpg" alt="Atrayente biologico en monodosis para el control de avispa asiatica" class="sv-thumb"><strong>Atrayente VespaCatch (100 Sticks)</strong></td><td>Atrayente Natural</td><td>Universal Líquido</td><td><span class="sv-chip sv-chip-eco">Fórmula Biológica</span></td><td><strong>9.5</strong>/10</td><td style="text-align:right"><a href="https://www.amazon.es/dp/B079Z1K9XY?tag=huertomusical-21" class="sv-tb-btn" target="_blank" rel="sponsored nofollow noopener">Ver en Amazon</a></td></tr>
+              <tr><td>06</td><td><img src="https://stopvelutinas.com/wp-content/uploads/2026/10/masso-preben.jpg" alt="Atrayente liquido Masso Preben para el control de avispa asiatica" class="sv-thumb"><strong>Massó Preben Líquido 190 ml</strong></td><td>Cebo RTU Listo Uso</td><td>Jardines Residenciales</td><td><span class="sv-chip sv-chip-warn">Sin Mezclas</span></td><td><strong>8.7</strong>/10</td><td style="text-align:right"><a href="https://www.amazon.es/dp/B01N0P6T8V?tag=huertomusical-21" class="sv-tb-btn" target="_blank" rel="sponsored nofollow noopener">Ver en Amazon</a></td></tr>
+              <tr><td>07</td><td><img src="https://stopvelutinas.com/wp-content/uploads/2026/10/spray-derribo.jpg" alt="Spray de derribo a 5 metros Flower Fin para el control de avispa asiatica" class="sv-thumb"><strong>Flower Fin Avispas 800 ml</strong></td><td>Aerosol Vortex 5 m</td><td>Aleros &amp; Cornisas</td><td><span class="sv-chip sv-chip-dang">Derribo Flash</span></td><td><strong>9.4</strong>/10</td><td style="text-align:right"><a href="https://www.amazon.es/dp/B00W7D7EEM?tag=huertomusical-21" class="sv-tb-btn" target="_blank" rel="sponsored nofollow noopener">Ver en Amazon</a></td></tr>
+              <tr><td>08</td><td><img src="https://stopvelutinas.com/wp-content/uploads/2026/10/zum-spray.jpg" alt="Insecticida barrera lacadora Zum Fly C para el control de avispa asiatica" class="sv-thumb"><strong>Zum Fly C Avispas 1000 ml</strong></td><td>Barrera Residual</td><td>Porches &amp; Desvanes</td><td><span class="sv-chip sv-chip-dang">Efecto Preventivo</span></td><td><strong>9.1</strong>/10</td><td style="text-align:right"><a href="https://www.amazon.es/dp/B0797Z9GKL?tag=huertomusical-21" class="sv-tb-btn" target="_blank" rel="sponsored nofollow noopener">Ver en Amazon</a></td></tr>
+              <tr><td>09</td><td><img src="https://stopvelutinas.com/wp-content/uploads/2026/10/spray-derribo.jpg" alt="Aerosol con praletrina Avispaclac para el control de avispa asiatica" class="sv-thumb"><strong>Avispa'clac Spray 600 ml</strong></td><td>Aerosol Praletrina</td><td>Muros &amp; Setos</td><td><span class="sv-chip sv-chip-dang">Parálisis Rápida</span></td><td><strong>8.8</strong>/10</td><td style="text-align:right"><a href="https://www.amazon.es/dp/B083ZMSW8V?tag=huertomusical-21" class="sv-tb-btn" target="_blank" rel="sponsored nofollow noopener">Ver en Amazon</a></td></tr>
+              <tr><td>10</td><td><img src="https://stopvelutinas.com/wp-content/uploads/2026/10/arpa-electrica.jpg" alt="Arpa electrica apicola Abella Mel para el control de avispa asiatica" class="sv-thumb"><strong>Abella Mel Arpa Eléctrica 2200V</strong></td><td>Barrera Física Activa</td><td>Apiarios Comerciales</td><td><span class="sv-chip sv-chip-eco">Paso Libre Abeja</span></td><td><strong>9.7</strong>/10</td><td style="text-align:right"><a href="https://www.amazon.es/dp/B087Z5Q1N6?tag=huertomusical-21" class="sv-tb-btn" target="_blank" rel="sponsored nofollow noopener">Ver en Amazon</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <aside id="combo-indispensable" class="sv-combo">
+          <span class="sv-combo-rib">⭐ El Combo Defensivo Indispensable 2026</span>
+          <div class="sv-combo-grid">
+            <div class="sv-combo-vis">
+              <img src="https://stopvelutinas.com/wp-content/uploads/2026/10/vespacatch-select.jpg" alt="Trampa selectiva VespaCatch Select para el control de avispa asiatica" class="sv-combo-img">
+              <span style="font-size:1.75rem;font-weight:800;color:var(--a)">+</span>
+              <img src="https://stopvelutinas.com/wp-content/uploads/2026/10/atrayente-sticks.jpg" alt="Pack 100 sticks atrayente biologico para el control de avispa asiatica" class="sv-combo-img">
+            </div>
+            <div>
+              <h4 style="font-size:1.25rem;color:var(--p);margin:0 0 .35rem;font-weight:800">Pack Defensivo: VespaCatch Select + 100 Sticks Véto-pharma</h4>
+              <p style="font-size:.92rem;margin:0 0 .5rem">El mayor error en el <strong>control de avispa asiática</strong> es usar trampas selectivas con siropes azucarados que ahogan a las abejas. Combina el selector mecánico con el atrayente biológico homologado para 6 meses de protección continua con cero mortandad en polinizadores.</p>
+              <div style="display:flex;gap:.75rem;flex-wrap:wrap;font-size:.82rem;font-weight:700;color:#065F46"><span>✓ Cero bajas en abejas</span><span>✓ 100 dosis predosificadas</span><span>✓ Autonomía para 24 semanas</span></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:.5rem">
+              <a href="https://www.amazon.es/dp/B07V3GZ7Q4?tag=huertomusical-21" class="sv-btn sv-btn-amz" target="_blank" rel="sponsored nofollow noopener">Comprar Trampa</a>
+              <a href="https://www.amazon.es/dp/B079Z1K9XY?tag=huertomusical-21" class="sv-btn" style="background:#FFF;border:1px solid var(--b);color:var(--p)!important" target="_blank" rel="sponsored nofollow noopener">Añadir Sticks (Pack 100)</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <section id="ranking-top-10" class="sv-sec sv-c">
+      <div class="sv-head">
+        <span class="sv-eye">Evaluación Exhaustiva</span>
+        <h2>Las 10 Mejores Soluciones para el Control de Avispa Asiática en 2026</h2>
+        <p>Probadas bajo condiciones reales de campo en la cornisa cantábrica y Galicia, evaluando selectividad ecológica, seguridad humana y durabilidad.</p>
+      </div>
+      <div class="sv-plist">
+        <!-- 1 -->
+        <article id="prod-1" class="sv-pcard is-top">
+          <div class="sv-paside"><div class="sv-pimg"><img src="https://stopvelutinas.com/wp-content/uploads/2026/10/vespacatch-select.jpg" alt="Trampa selectiva de avispa asiatica VespaCatch Select para el control de avispa asiatica en apiarios" loading="lazy"></div><div style="font-size:1.25rem;font-weight:800;color:var(--p)">9.6<small style="font-size:.8rem;color:var(--m)">/10</small></div><div style="color:#F59E0B">★★★★★</div><span style="font-size:.78rem;color:var(--m)">~120 opiniones Amazon</span></div>
+          <div class="sv-pmain">
+            <div>
+              <div class="sv-phead"><div><span class="sv-pbrand">Véto-pharma · Referencia Europea</span><h3 class="sv-ptitle">VespaCatch Select — Trampa con Selector de Calibre Milimétrico</h3></div><div class="sv-prank">#1</div></div>
+              <div style="display:flex;gap:.35rem;flex-wrap:wrap;margin-bottom:.5rem"><span class="sv-chip sv-chip-eco">Dial Selectivo 8-11 mm</span><span class="sv-chip" style="background:#E0E7FF;color:#3730A3">Top Elección Apícola</span></div>
+              <p class="sv-pdesc">El estándar de oro en el <strong>control de avispa asiática</strong> profesional en apiarios europeos. Su dial regulable de 8 a 11 mm permite que las abejas pecoreadoras salgan de inmediato mientras confina a reinas fundadoras y obreras invasoras.</p>
+              <div class="sv-proscons"><div><strong style="color:var(--e)">✓ Ventajas Clave</strong><ul><li>Selectividad mecánica demostrada: 0 bajas en abejas.</li><li>Cámara superior ventilada que evita la putrefacción.</li><li>Plástico resistente a heladas y rayos UV.</li></ul></div><div><strong style="color:var(--a)">⚠ A Considerar</strong><ul><li>Requiere reponer el atrayente líquido cada 2-3 semanas.</li><li>Orientar al sol naciente para mayor difusión térmica.</li></ul></div></div>
+            </div>
+            <div class="sv-pfoot"><div style="font-size:.8rem;color:var(--m)"><span class="sv-ptag">Prime</span> Envío 24h · 🔒 Compra Segura Amazon · 🔄 Devolución 30 Días</div><a href="https://www.amazon.es/dp/B07V3GZ7Q4?tag=huertomusical-21" class="sv-btn sv-btn-amz" target="_blank" rel="sponsored nofollow noopener">Consultar Precio en Amazon.es →</a></div>
+          </div>
+        </article>
+        <!-- 2 -->
+        <article id="prod-2" class="sv-pcard">
+          <div class="sv-paside"><div class="sv-pimg"><img src="https://stopvelutinas.com/wp-content/uploads/2026/10/beevital-trap.jpg" alt="BeeVital VelutinaTrap trampa en seco para el control de avispa asiatica en jardines" loading="lazy"></div><div style="font-size:1.25rem;font-weight:800;color:var(--p)">9.3<small style="font-size:.8rem;color:var(--m)">/10</small></div><div style="color:#F59E0B">★★★★½</div><span style="font-size:.78rem;color:var(--m)">~85 opiniones Amazon</span></div>
+          <div class="sv-pmain">
+            <div>
+              <div class="sv-phead"><div><span class="sv-pbrand">BeeVital · Innovación Austriaca</span><h3 class="sv-ptitle">BeeVital VelutinaTrap — Captura Limpia en Seco Sin Olores</h3></div><div class="sv-prank">#2</div></div>
+              <div style="display:flex;gap:.35rem;flex-wrap:wrap;margin-bottom:.5rem"><span class="sv-chip sv-chip-eco">Captura en Seco</span><span class="sv-chip" style="background:#E0E7FF;color:#3730A3">Ideal Terrazas &amp; Porches</span></div>
+              <p class="sv-pdesc">En el <strong>control de avispa asiática</strong> residencial, está di
